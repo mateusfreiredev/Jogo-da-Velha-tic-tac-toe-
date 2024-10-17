@@ -1,0 +1,34 @@
+td {
+    width: 200px;
+    height: 100px;
+    
+}
+
+#playerName{
+    margin: 0;
+    padding: 0;
+    display: inline;
+}
+
+table {
+    margin: 0 auto;
+}
+
+table, td, tr{
+    border-style: solid;
+    border-color: black;
+    border-width: 3px;
+}
+
+#section2, form{
+    text-align: center;
+}
+
+header{
+    text-align: center;
+}
+
+fieldset{
+    width: 800px;
+    margin: 0 auto;
+}
