@@ -2,6 +2,10 @@ const btnstart = document.getElementById("btnstart")
 const section2 = document.getElementById("section2")
 const h2 = document.getElementById("h2")
 
+function executeGame(){
+     
+}
+
 btnstart.addEventListener("click", function(ev){
     ev.preventDefault()
 
@@ -14,7 +18,3 @@ btnstart.addEventListener("click", function(ev){
 
     executeGame()
 })
-
-function executeGame (){
-    
-}
