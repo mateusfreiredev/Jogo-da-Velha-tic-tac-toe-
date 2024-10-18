@@ -3,7 +3,13 @@ const section2 = document.getElementById("section2")
 const h2 = document.getElementById("h2")
 
 function executeGame(){
-     
+     document.querySelectorAll(".tableBtn").forEach(function (tableBtn) {
+        tableBtn.addEventListener("click", function () {
+            let keyPressed = tableBtn.dataset.value
+            console.log(keyPressed)
+        })
+     })
+    
 }
 
 btnstart.addEventListener("click", function(ev){
