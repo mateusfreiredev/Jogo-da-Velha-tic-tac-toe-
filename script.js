@@ -1,26 +1,84 @@
-const btnstart = document.getElementById("btnstart")
-const section2 = document.getElementById("section2")
-const h2 = document.getElementById("h2")
+const btnstart = document.getElementById("btnstart");
+const section2 = document.getElementById("section2");
 
-function executeGame(){
-     document.querySelectorAll(".tableBtn").forEach(function (tableBtn) {
-        tableBtn.addEventListener("click", function () {
-            let keyPressed = tableBtn.dataset.value
-            console.log(keyPressed)
-        })
-     })
-    
+const h2 = document.getElementById("h2");
+let player1 = ""
+let player2 = ""
+let playerName = ""
+
+let mark = ""
+
+function testGameWin(){
+
+
 }
 
-btnstart.addEventListener("click", function(ev){
-    ev.preventDefault()
+function playerMove(keyPressed) {
 
-    section2.style.display = "block"
 
-    const player1 = document.getElementById("player1").value
-    const player2 = document.getElementById("player2").value
 
-    h2.innerText = "Jogador " + player1 + " é a sua vez!"
+    //Identificador de jogador da rodada:
+    if(playerName === player1){
+        mark = "X"
 
-    executeGame()
-})
+        const toMark = document.getElementById(keyPressed)
+        toMark.innerText = mark
+    }else if(playerName === player2){
+        mark = "O"
+
+        const toMark = document.getElementById(keyPressed)
+        toMark.innerText = mark
+    }
+        
+
+    testGameWin()
+  }
+
+//Abaixo a função de preparação para o "click de cada célula"
+function btnTable() {
+  document.querySelectorAll(".tableBtn").forEach(function (tableBtn) {
+    tableBtn.addEventListener("click", function () {
+      let keyPressed = tableBtn.dataset.value;
+        playerMove(keyPressed)    
+    });
+  });
+}
+
+
+//Abaixo função de preparação do ambiente para o jogo:
+btnstart.addEventListener("click", function (ev) {
+  ev.preventDefault();
+
+    player1 = document.getElementById("player1").value;
+    player2 = document.getElementById("player2").value;
+    playerName = player1
+
+    h2.innerText = "Jogador " + playerName + " é a sua vez!"
+
+  section2.style.display = "block";
+
+  executeGame();
+});
+
+function executeGame(){
+
+    btnTable()
+
+
+}
+
+/*
+
+FUNÇÕES A SEREM CRIADAS:
+
+MOVIMENTO DE CADA JOGADOR
+VALIDAÇÃO DO GANHADOR
+BOTÃO RECOMEÇAR
+
+
+if (tableBtn.id === keyPressed) {
+        tableBtn.innerText = "x";
+      } // Marca com x a célula pressionada
+
+
+*/
