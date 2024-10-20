@@ -8,6 +8,11 @@ let playerName = "";
 
 let mark = "";
 
+const btnReset = document.getElementById("btnReset")
+btnReset.addEventListener("click", function(){
+  location.reload() //Atualiza a página
+})
+
 function testGameWin(player1,player2) {
   
 function verifySolve(solveArray, markedCelsX, markedCelsY) {
@@ -58,6 +63,9 @@ function verifySolve(solveArray, markedCelsX, markedCelsY) {
     }
 
     h2.innerText = "O vencedor é o jogador " + player + " !!"
+    h2.style.color = "green"
+    h2.style.textTransform = "uppercase"
+    h2.style.fontSize = "30px"
   }
 
   if(result.result === true){
@@ -75,7 +83,11 @@ function playerMove(keyPressed) {
     }
   
     const toMark = document.getElementById(keyPressed);
-    toMark.innerText = mark;
+    if(toMark.innerText !== ""){
+      return 
+    }else{
+      toMark.innerText = mark;
+    }
   
     function changePlayer(player1, player2) {
       if (playerName === player1) {
@@ -86,6 +98,8 @@ function playerMove(keyPressed) {
     }
   
     playerName = changePlayer(player1, player2);
+
+    h2.innerText = "Jogador " + playerName + " é a sua vez!"
   
     testGameWin(player1,player2);
   }
