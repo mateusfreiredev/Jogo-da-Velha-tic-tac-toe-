@@ -1,6 +1,6 @@
 td {
-    width: 200px;
-    height: 100px;
+    width: 12rem;
+    height: 6rem;
     
 }
 
@@ -17,8 +17,8 @@ table {
 table, td, tr{
     border-style: solid;
     border-color: black;
-    border-width: 3px;
-    font-size: 50px;
+    border-width: 0.188rem;
+    font-size: 3.125rem;
 }
 
 #section2, form{
@@ -30,7 +30,7 @@ header{
 }
 
 fieldset{
-    width: 800px;
+    width: auto;
     margin: 0 auto;
 }
 

@@ -65,7 +65,7 @@ function verifySolve(solveArray, markedCelsX, markedCelsY) {
     h2.innerText = "O vencedor é o jogador " + player + " !!"
     h2.style.color = "green"
     h2.style.textTransform = "uppercase"
-    h2.style.fontSize = "30px"
+    h2.style.fontSize = "1.875rem"
   }
 
   if(result.result === true){
@@ -134,18 +134,4 @@ function executeGame() {
   btnTable();
 }
 
-/*
 
-FUNÇÕES A SEREM CRIADAS:
-
-MOVIMENTO DE CADA JOGADOR
-VALIDAÇÃO DO GANHADOR
-BOTÃO RECOMEÇAR
-
-
-if (tableBtn.id === keyPressed) {
-        tableBtn.innerText = "x";
-      } // Marca com x a célula pressionada
-
-
-*/
